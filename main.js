@@ -149,14 +149,17 @@ $("#0").click(function() {
 
 $("#del").click(function() {
 	console.log('del');
+	calculator.func = 'del';
 });
 
 $("#umn").click(function() {
 	console.log('umn');
+	calculator.func = 'umn';
 });
 
 $("#minus").click(function() {
 	console.log('minus');
+	calculator.func = 'minus';
 });
 
 $("#plus").click(function() {
@@ -168,6 +171,18 @@ $("#enter").click(function() {
 	console.log('enter');
 	if (calculator.func === 'plus') {
 		calculator.enter = calculator.numberA + calculator.numberB;
+		calculator.output = calculator.enter;
+	}
+	if (calculator.func === 'minus') {
+		calculator.enter = calculator.numberA - calculator.numberB;
+		calculator.output = calculator.enter;
+	}
+	if (calculator.func === 'umn') {
+		calculator.enter = calculator.numberA * calculator.numberB;
+		calculator.output = calculator.enter;
+	}
+	if (calculator.func === 'del') {
+		calculator.enter = calculator.numberA / calculator.numberB;
 		calculator.output = calculator.enter;
 	}
 
